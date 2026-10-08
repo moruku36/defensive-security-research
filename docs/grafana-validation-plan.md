@@ -4,16 +4,16 @@ Checked: 2026-10-08 UTC. No validation has started. This plan contains no vulner
 
 ## Start gates
 
-1. Confirm the current Grafana VDP scope, expanded safe-harbor text and participant terms. Preserve dated policy evidence in an appropriate location.
-2. Recheck latest release; baseline observed during research: v13.2.3 / 6193dc03311b631b9727b560d24369e683dc396e. Verify downloaded OSS image provenance and digest before execution.
-3. Restore an available local execution environment. The research task's shell failed during setup refresh; Docker, WSL and local files could not be inspected. Their availability is unknown.
-4. Switch validation work to the user-requested Astra medium only after the parent task explicitly authorizes that stage. A person must understand and run each submitted PoC; model output is not evidence of human validation.
+1. The coordinating task confirmed the expanded Grafana safe-harbor text on 2026-10-08. Recheck current scope and participant terms before execution; there is no local-testing exemption. Preserve dated policy evidence.
+2. Recheck the latest release before validation and submission. Use the verified official image digest and record the actual build metadata. The official patched-image build commit differs from the public release tag; complete source reproduction and signed attestation remain unverified. See [artifact notes](grafana-policy.md#official-artifact-and-lab-preparation--公式artifactとラボ準備).
+3. Local runtime readiness was demonstrated by the coordinating task: the isolated lab started, passed a health check and was stopped. The assistant handles restart, isolation checks and shutdown for the manual session.
+4. A person must understand and personally run each PoC intended for submission, confirm the actual result and explain AI assistance. Prepare the private manual checklist before the session. The researcher supplies any required secret input.
 
 ## Environment design
 
 Use a disposable local OSS instance bound only to 127.0.0.1, with a private container network and restricted outbound connectivity after dependency acquisition. Confirm it is inaccessible from the LAN. Use production mode, built-in functionality, synthetic records and locally created test identities. No host filesystem, Docker socket, real cloud credentials, production databases, community plugins or Enterprise features are mounted or connected.
 
-Test identities represent only researcher-owned users and organizations. Setup, port configuration and isolation checks occur before any security test. This is a proposed environment, not an executed or verified configuration.
+Test identities represent only researcher-owned users and organizations. Setup, port configuration and isolation checks occur before any security test. The coordinating task verified startup with 1 CPU, 1 GiB memory, a 256-PID limit, read-only root filesystem, loopback binding and no host mounts. The lab is stopped. This readiness check does not demonstrate a security finding; recheck isolation when restarting.
 
 ## First review focus
 
