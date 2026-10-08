@@ -6,7 +6,9 @@ This repository records official policy research, safe validation plans, and exp
 
 ## Status / 現在の状態
 
-As of 2026-10-08: policy research only; no active validation, report submission, or public credit.
+As of 2026-10-08: policy research and public-source review prepared; an isolated local Grafana OSS lab was started, passed a health check, and was stopped. Vulnerability validation has not started; no reports or public credits.
+
+2026-10-08現在：規約調査・公開ソースレビューを実施。隔離したローカルGrafana OSSラボは起動・health疎通確認後に停止済み。脆弱性検証は未実施です。
 
 | Stage / 段階 | Count / 件数 |
 |---|---:|
@@ -38,6 +40,6 @@ Checked / 確認日: **2026-10-08 (UTC)**. Program policies can change.
 2. GitLab: [HackerOne program](https://hackerone.com/gitlab), [official policy update](https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/). Full current platform scope must be checked before any validation.
 3. Kubernetes: [official security reporting](https://kubernetes.io/docs/reference/issues-security/security/), [HackerOne program](https://hackerone.com/kubernetes). Full current platform scope must be checked before any validation.
 
-Next: resolve Grafana safe-harbor full-text verification and local runtime availability, then review a human-supervised local-only plan before starting validation.
+Next: the assistant starts the stopped lab and prepares the local test session. The researcher reviews the private manual checklist, understands and personally performs the checks, and confirms the actual results. The assistant handles lab start/stop; any required secret input is supplied by the researcher. See the [readiness checklist](docs/grafana-readiness-checklist-ja-en.md).
 
-次の行動: Grafana固有safe harbor全文とローカル実行環境を確認し、本人が関与するローカル限定の計画を見直してから検証を開始します。
+次の行動：assistantが停止中のラボを起動し、本人が非公開の手動確認票を読み、操作と期待結果を理解して実行・結果確認します。起動・停止はassistant担当、必要な秘密入力は本人が行います。safe harbor全文は確認済みです。
